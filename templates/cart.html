@@ -1,0 +1,20 @@
+{% for item in cart %}
+    <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+
+        <img src="{{ url_for('static', filename='images/' + item[1]) }}" width="100">
+
+        <p><b>{{ item[2] }}</b></p>
+        <p>Price: ₹{{ item[3] }}</p>
+        <p>Qty: {{ item[4] }}</p>
+        <p>Item Total: ₹{{ item[5] }}</p>
+
+        <form method="POST" action="{{ url_for('cart.remove_from_cart') }}">
+            <input type="hidden" name="product_id" value="{{ item[0] }}">
+            <button type="submit">Remove</button>
+        </form>
+
+    </div>
+{% endfor %}
+
+<hr>
+<h3>Grand Total: ₹{{ total_bill }}</h3> 

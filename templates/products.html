@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Products</h2>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+{% for product in products %}
+    <div style="border:1px solid #ccc; padding:10px; width:200px;">
+       <img src="{{ url_for('static', filename='images/' + product[5]) }}" width="200"><br>
+
+        <b>Name:</b> {{ product[1] }} <br>
+        <b>Category:</b> {{ product[4] }} <br>
+        <b>Price:</b> ₹{{ product[2] }} <br>
+        <p>{{ product[3] }}</p>
+
+
+        <form method="POST" action="/add_to_cart">
+            <input type="hidden" name="product_id" value="{{ product[0] }}">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

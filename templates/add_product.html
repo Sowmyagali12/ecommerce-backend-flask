@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Product (Admin)</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    Name: <input type="text" name="name" required><br>
+    Category: <input type="text" name="category" required><br>
+    Price: <input type="number" name="price" required><br>
+
+    Image:
+    <input type="file" name="image" accept="image/*" required><br>
+
+    Description:<br>
+    <textarea name="description"></textarea><br>
+
+    <button type="submit">Add Product</button>
+</form>
+{% endblock %}
