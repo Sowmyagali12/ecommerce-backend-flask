@@ -12,7 +12,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'SowmyaMySQL@2025'
+app.config['MYSQL_PASSWORD'] = 'YourSQLPassword'
 app.config['MYSQL_DB'] = 'ecommerce_db'
 
 mysql.init_app(app)  
@@ -27,3 +27,4 @@ app.register_blueprint(cart_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
